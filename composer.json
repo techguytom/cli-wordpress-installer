@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "TechGuyTom\\CliWordpressInstaller": ""
+            "Techguytom\\CliWordpressInstaller": ""
         }
     },
     "target-dir": "Techguytom/CliWordpressInstaller"
