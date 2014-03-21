@@ -3,10 +3,12 @@
 namespace Techguytom\CliWordpressInstaller;
 
 use Symfony\Component\Yaml\Parser;
+use Composer\Script\Event;
 
 class Installer {
-    public static function cliInstall()
+    public static function cliInstall(Event $event)
     {
-        var_dump('test');
+        $parser = new Parser();
+        var_dump($parser);
     }
 }
