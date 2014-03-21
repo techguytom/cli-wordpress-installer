@@ -1,0 +1,24 @@
+{
+    "name": "techguytom/cli-wordpress-installer",
+    "type": "library",
+    "description": "Automation process for utilizing wp-cli and composer for WordPress installation.",
+    "keywords": ["WordPress", "wp-cli", "installer"],
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Tom Jenkins",
+            "email": "tom@techguytom.com",
+            "homepage": "http://techguytom.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/yaml": "2.4.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "TechGuyTom\\CliWordpressInstaller": ""
+        }
+    }
+}
