@@ -25,7 +25,7 @@ class InstallHandler {
         }
 
         $configFile   = $extras['incenteev-parameters']['file'];
-        $cliProcessor = new CliProcessor($event->getIO());
+        //$cliProcessor = new CliProcessor($event->getIO());
 
         //$cliProcessor->getParameters($configFile);
         
