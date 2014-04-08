@@ -47,7 +47,10 @@ class ConfigFileFinalizer
 
         $additions = "define('WP_HOME' , '" . $this->_parameters->getSiteUrl() . "');\n";
         $additions .= "define('WP_SITEURL', WP_HOME);\n";
-        $additions .= "define('WP_CONTENT_DIR', dirname(__FILE__) . '" . $this->_parameters->getContentDirectory() . "');\n";
+        $additions .= "define('WP_CONTENT_DIR', dirname(__FILE__) . '" . 
+            DIRECTORY_SEPARATOR . 
+            $this->_parameters->getContentDirectory() . 
+            "');\n";
         $additions .= "define('WP_CONTENT_URL', '" .
             $this->_parameters->getSiteUrl() . 
             "/" . 
