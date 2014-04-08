@@ -56,17 +56,9 @@ class InstallHandler {
 
         exec("wp db  --path=" . $setParameters->getWpDirectory() . " create");
 
-        $databaseString = $cliConfigurator->databaseChanges();
-
-        if ($databaseString) {
-            file_put_contents('dbpath.sql', $databaseString);
-            exec("wp db --path=" . $setParameters->getWpDirectory() . " query < dbpath.sql");    
-            unlink('dbpath.sql');
-        }
-
         exec("mv " . $setParameters->getWpDirectory() . "/wp-config.php wp-config.php");
 
-        $messageHandler->writeStatusToConsole("Database changes complete.");
+        $messageHandler->writeStatusToConsole("Database creation complete.");
         $messageHandler->writeStatusToConsole("Generating .htaccess file.");
         
         $htaccess = new Lib\HtaccessGenerator($setParameters);
