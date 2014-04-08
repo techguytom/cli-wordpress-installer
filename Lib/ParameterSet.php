@@ -46,8 +46,8 @@ class ParameterSet
         $this->setEnvironment($parameters->environment);
         $this->setSiteUrl($parameters->wordpress_site_url);
         $this->setContentDirectory($parameters->content_directory);
-        $this->setUploadPath($parameters->wordpress_upload_path);
-        $this->setUploadUrl($parameters->wordpress_upload_url);
+        //$this->setUploadPath($parameters->wordpress_upload_path);
+        //$this->setUploadUrl($parameters->wordpress_upload_url);
     }
 
     public function setWpDirectory($dir = '')
