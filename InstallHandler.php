@@ -7,8 +7,6 @@ use Symfony\Component\Yaml\Parser;
 
 class InstallHandler {
 
-    private $_io;
-
     public static function cliInstall(Event $event)
     { 
         $messageHandler = new MessageHandler($event->getIO());
@@ -53,7 +51,7 @@ class InstallHandler {
             $messageHandler->writeErrorToConsole("Error writing wp-config.php");
             exit();
         }
-        
+
         $messageHandler->writeStatusToConsole("Creating the database.");
 
         exec("wp db  --path=" . $setParameters->getWpDirectory() . " create");
@@ -66,6 +64,20 @@ class InstallHandler {
             unlink('dbpath.sql');
         }
 
+        exec("mv " . $setParameters->getWpDirectory() . "/wp-config.php wp-config.php");
+
         $messageHandler->writeStatusToConsole("Database changes complete.");
+        $messageHandler->writeStatusToConsole("Generating .htaccess file.");
+        
+        $htaccess = new Lib\HtaccessGenerator($setParameters);
+        $content = $htaccess->htaccessContent();
+        $htaccessFile = $htaccess->writeHtaccess($content);
+
+        if (!$htaccessFile) {
+            $messageHandler->writeErrorToConsole("Error writing .htaccess file.");
+            exit();
+        }
+
+        $messageHandler->writeStatusToConsole(".htaccess file created.");
     }
 }

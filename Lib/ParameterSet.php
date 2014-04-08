@@ -175,6 +175,14 @@ class ParameterSet
         return $this->_siteUrl;
     }
 
+    public function getSiteUrlNoHttp()
+    {
+        $position = strpos($this->_siteUrl, "://");
+        $newpos = $position + 3;
+
+        return substr($this->_siteUrl, $newpos);
+    }
+
     public function getContentDirectory()
     {
         return $this->_contentDirectory;

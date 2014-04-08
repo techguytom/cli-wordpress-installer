@@ -20,7 +20,7 @@ class ConfigFileFinalizer
         $configFile = file_get_contents($this->_parameters->getWpDirectory() . "/wp-config.php");
 
         if (!$configFile) {
-        
+            return $configFile;
         }
 
         $wpDebug    = $this->_environmentCheck();
