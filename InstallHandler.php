@@ -5,6 +5,16 @@ namespace Techguytom\CliWordpressInstaller;
 use Composer\Script\Event;
 use Symfony\Component\Yaml\Parser;
 
+/**
+ * InstallHandler
+ *
+ * Primary control class for directing the workflow of the WordPress 
+ * configuration
+ *
+ * @package 
+ * @author Tom Jenkins <tom@techguytom.com>
+ * @version $Id$
+ */
 class InstallHandler {
 
     public static function cliInstall(Event $event)
