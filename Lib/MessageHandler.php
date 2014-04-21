@@ -7,7 +7,7 @@
  * @author   Tom Jenkins <tom@techguytom.com>
  */
 
-namespace Techguytom\CliWordpressInstaller;
+namespace Techguytom\CliWordpressInstaller\Lib;
 
 use Composer\IO\IOInterface;
 
