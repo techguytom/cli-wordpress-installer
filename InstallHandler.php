@@ -20,7 +20,7 @@ use Symfony\Component\Yaml\Parser;
  *
  * @package WordPress
  * @author  Tom Jenkins <tom@techguytom.com>
- * @version Release: 0.8 
+ * @version Release: 0.8.1
  */
 class InstallHandler
 {
